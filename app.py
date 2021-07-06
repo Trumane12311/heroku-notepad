@@ -1,44 +1,41 @@
 from flask import Flask, jsonify, render_template, redirect
+from dotenv import load_dotenv
 from flask_pymongo import PyMongo
-#from os import environ
+from os import environ
+from datetime import datetime
 #from dotenv import find_dotenv, load_dotenv
-#import ScrapedRandomRollerCoaster
+import ScrapedRandomRollerCoaster
+
+s_user = environ.get('SEC_USERNAME')
+s_pass = environ.get('SEC_PASSWORD')
 
 app = Flask(__name__)
-app.config['MONGO_URI'] = environ.get(
-    'MONGO_URI')
 
-#database set-up
-mongo = PyMongo(app)
+#app.config['MONGO_URI'] = environ.get('MONGODB_URI')
+mongo = PyMongo(app, uri=f'mongodb+srv://{s_user}:{s_pass}@cluster0.oxmmo.mongodb.net/rc_DB?retryWrites=true&w=majority')
+
 
 @app.route("/")
 def home():
-    return Welcome to Our Roller Coaster Database API!
-
-#@app.route("/")
-#def home():
-    #random_coaster = mongo.db.random_coaster.find_one()
-    #return render_template("index.html", random_data=random_coaster)
-
-#@app.route("/scrape")
-#def scrape():
-    #random_data = ScrapedRandomRollerCoaster.scrape()
-    #mongo.db.random_coaster.update({}, random_data, upsert=True)
+    random_coaster = mongo.db.random_coaster.find_one()
+    random_data = ScrapedRandomRollerCoaster.scrape()
+    mongo.db.random_coaster.update({}, random_data, upsert=True)
+    return render_template("index.html", random_data=random_coaster)
 
 @app.route('/api/coasters/mongo')
 def coasters_mongo():
-    coasters = mongo.db.rc_DB.find()
+    coasters = mongo.db.coasters.find({})
     data = []
 
     for coaster in coasters:
-        data.append({
+        coaster_info = ({
           '_id': str(coaster['_id']),
-          'Roller Coaster': str(coaster['Roller Coaster']),
-          'Amusement Park': str(coaster['Amusement Park']),
-          'Type': str(coaster['Type']),
-          'Design': str(coaster['Design']),
-          'Opened': datetime(coaster['Opened'])
+          'Roller Coaster': coaster['Roller Coaster'],
+          'Amusement Park': coaster['Amusement Park'],
+          'Type': coaster['Type'],
+          'Design': coaster['Design']
         })
+        data.append(coaster_info)
 
     return jsonify(data)
 
