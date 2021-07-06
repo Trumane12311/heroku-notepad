@@ -2,7 +2,6 @@ from flask import Flask, render_template, redirect
 from dotenv import load_dotenv
 from os import environ
 from flask_pymongo import PyMongo
-import ScrapedRandomRollerCoaster
 
 load_dotenv()
 
