@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template, redirect
+from flask import Flask, jsonify, render_template, redirect, request
 from dotenv import load_dotenv
 from flask_pymongo import PyMongo
 from os import environ
@@ -6,10 +6,11 @@ from datetime import datetime
 #from dotenv import find_dotenv, load_dotenv
 import ScrapedRandomRollerCoaster
 
+app = Flask(__name__)
 s_user = environ.get('SEC_USERNAME')
 s_pass = environ.get('SEC_PASSWORD')
 
-app = Flask(__name__)
+
 
 #app.config['MONGO_URI'] = environ.get('MONGODB_URI')
 mongo = PyMongo(app, uri=f'mongodb+srv://{s_user}:{s_pass}@cluster0.oxmmo.mongodb.net/rc_DB?retryWrites=true&w=majority')
@@ -22,7 +23,11 @@ def home():
     mongo.db.random_coaster.update({}, random_data, upsert=True)
     return render_template("index.html", random_data=random_coaster)
 
-@app.route('/api/coasters/mongo')
+@app.route("/team")
+def team():
+    return "about.html"
+
+@app.route("/api/coasters/mongo")
 def coasters_mongo():
     coasters = mongo.db.coasters.find({})
     data = []
