@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect
 from dotenv import load_dotenv
+from os import environ
 from flask_pymongo import PyMongo
 import ScrapedRandomRollerCoaster
 
@@ -9,19 +10,11 @@ app = Flask(__name__)
 app.config['MONGODB_URI'] = environ.get('MONGODB_URI')
 
 #database set-up
-mongo = PyMongo(app, uri="mongodb://localhost:27017/randomcoasterDB")
+mongo = PyMongo(app)
 
 @app.route("/")
 def home():
-    random_coaster = mongo.db.random_coaster.find_one()
-    return render_template("index.html", random_data=random_coaster)
-
-@app.route("/scrape")
-def scrape():
-    random_data = ScrapedRandomRollerCoaster.scrape()
-    mongo.db.random_coaster.update({}, random_data, upsert=True)
-    
-    return redirect("/")
+    return 'Roller Coaster Database API'
 
 @app.route('/api/coasters/mongo')
 def coasters_mongo():
