@@ -17,7 +17,7 @@ def home():
     #return render_template("index.html", random_data=random_coaster)
     return 'Welcome to my API'
 
-@app.route("/api/coasters/mongo")
+@app.route("/api/coasters/")
 def coasters_mongo():
     coasters = mongo.db.coasters.find({})
     data = []
@@ -45,7 +45,7 @@ def coasters_mongo():
     return jsonify(data)
 
 @app.route("/api/records/drop")
-def coasters_mongo():
+def drops_mongo():
     drops = mongo.db.drop_records.find({})
     drop_data = []
 
