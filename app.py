@@ -51,17 +51,17 @@ def coasters_mongo():
 
     for drop in drops:
         coaster_info = ({
-            '_id': str(coaster['_id']),
-            'latitude': coaster['latitude'],
-            'longitude': coaster['longitude'],
-            'geometry': coaster['geometry'],
-            'City': coaster['City'],
-            'Rank': coaster['Rank'],
-            'Drop': coaster['Drop'],
-            'Roller Coaster': coaster['Roller Coaster'],
-            'Amusement Park': coaster['Amusement Park'],
-            'State': coaster['State'],
-            'Country': coaster['Country']
+            '_id': str(drop['_id']),
+            'latitude': drop['latitude'],
+            'longitude': drop['longitude'],
+            'geometry': drop['geometry'],
+            'City': drop['City'],
+            'Rank': drop['Rank'],
+            'Drop': drop['Drop'],
+            'Roller Coaster': drop['Roller Coaster'],
+            'Amusement Park': drop['Amusement Park'],
+            'State': drop['State'],
+            'Country': drop['Country']
             })
         drop_data.append(coaster_info)
     return jsonify(drop_data)
