@@ -81,7 +81,7 @@ def heights_mongo():
 
 @app.route("/api/records/length")
 def lengths_mongo():
-    lenghts = mongo.db.length_records.find({})
+    lengths = mongo.db.length_records.find({})
     length_data = []
 
     for length in lengths:
