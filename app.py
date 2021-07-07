@@ -21,16 +21,27 @@ def coasters_mongo():
     coasters = mongo.db.coasters.find({})
     data = []
 
-    for coaster in coasters:
-        coaster_info = ({
-          '_id': str(coaster['_id']),
-          'Roller Coaster': coaster['Roller Coaster'],
-          'Amusement Park': coaster['Amusement Park'],
-          'Type': coaster['Type'],
-          'Design': coaster['Design']
-        })
+    for coaster in coasters[0:10]:
+        try:
+            coaster_info = ({
+                '_id': str(coaster['_id']),
+                'Roller Coaster': coaster['Roller Coaster'],
+                'Amusement Park': coaster['Amusement Park'],
+                'Type': coaster['Type'],
+                'Design': coaster['Design'],
+                'Opened': coaster['Opened']
+                })
+        except KeyError:
+            coaster_info = ({
+                '_id': str(coaster['_id']),
+                'Roller Coaster': coaster['Roller Coaster'],
+                'Amusement Park': coaster['Amusement Park'],
+                'Type': coaster['Type'],
+                'Design': coaster['Design']
+                 })
+ #       if coaster['Status'] is not None:
         data.append(coaster_info)
-
+        print(coaster.keys())
     return jsonify(data)
 
 
