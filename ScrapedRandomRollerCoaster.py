@@ -8,11 +8,9 @@ import pandas as pd
 from selenium import webdriver
 import chromedriver_autoinstaller
 
-chromedriver_autoinstaller.install()
+#chromedriver_autoinstaller.install()
 
 driver = webdriver.Chrome()
-driver.get("http://www.python.org")
-assert "Python" in driver.title
 
 def scrape():
     executable_path = {'executable_path': ChromeDriverManager().install()}
@@ -62,7 +60,7 @@ def scrape():
             random_coaster['random_city'] = park_city
             random_coaster['random_state'] = park_state
             random_coaster['random_country'] = park_country
-            random_coaster['random_nation'] = 'null'
+            random_coaster['random_nation'] = ''
         except AttributeError:
             pass
             try:
@@ -71,8 +69,8 @@ def scrape():
                 random_coaster['random_park'] = park_name
                 random_coaster['random_city'] = park_city
                 random_coaster['random_state'] = park_state
-                random_coaster['random_country'] = 'null'
-                random_coaster['random_nation'] = 'null'
+                random_coaster['random_country'] = ''
+                random_coaster['random_nation'] = ''
             except AttributeError:
                 pass
 
