@@ -5,6 +5,14 @@ from splinter import Browser
 from bs4 import BeautifulSoup
 from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
+from selenium import webdriver
+import chromedriver_autoinstaller
+
+chromedriver_autoinstaller.install()
+
+driver = webdriver.Chrome()
+driver.get("http://www.python.org")
+assert "Python" in driver.title
 
 def scrape():
     executable_path = {'executable_path': ChromeDriverManager().install()}
