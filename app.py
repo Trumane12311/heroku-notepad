@@ -3,7 +3,7 @@ from flask_pymongo import PyMongo
 from os import environ
 from dotenv import find_dotenv, load_dotenv
 from selenium_chrome import Chrome
-#import ScrapedRandomRollerCoaster
+import ScrapedRandomRollerCoaster
 
 app = Flask(__name__)
 app.config['MONGO_URI'] = environ.get('MONGODB_URI', 'mongodb://localhost:27017/rc_DB')
@@ -11,11 +11,11 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def home():
-    #random_coaster = mongo.db.random_coaster.find_one()
-    #random_data = ScrapedRandomRollerCoaster.scrape()
-    #mongo.db.random_coaster.update({}, random_data, upsert=True)
-    #return render_template("index.html", random_data=random_coaster)
-    return 'Welcome to my API'
+    random_coaster = mongo.db.random_coaster.find_one()
+    random_data = ScrapedRandomRollerCoaster.scrape()
+    mongo.db.random_coaster.update({}, random_data, upsert=True)
+    return render_template("index.html", random_data=random_coaster)
+    #return 'Welcome to my API'
 
 @app.route("/api/coasters/")
 def coasters_mongo():
