@@ -122,5 +122,40 @@ def speeds_mongo():
         speed_data.append(coaster_info)
     return jsonify(speed_data)
 
+@app.route("/api/records/drop_geo")
+def drops_geo_mongo():
+    drops = mongo.db.drop_records_geo.find_one({})
+    drops['_id'] = str(drops['_id'])
+
+    return jsonify(drops)
+
+@app.route("/api/records/height_geo")
+def heights_geo_mongo():
+    heights = mongo.db.height_records_geo.find_one({})
+    heights['_id'] = str(heights['_id'])
+
+    return jsonify(heights)
+
+@app.route("/api/records/length_geo")
+def lengths_geo_mongo():
+    lengths = mongo.db.length_records_geo.find_one({})
+    lengths['_id'] = str(lengths['_id'])
+
+    return jsonify(lengths)
+
+@app.route("/api/records/speed_geo")
+def speeds_geo_mongo():
+    speeds = mongo.db.speed_records_geo.find_one({})
+    speeds['_id'] = str(speeds['_id'])
+
+    return jsonify(speeds)
+
+@app.route("/api/records/worldview")
+def world_geo_mongo():
+    world = mongo.db.worldview.find_one({})
+    world['_id'] = str(world['_id'])
+
+    return jsonify(world)
+
 if __name__ == "__main__":
     app.run(debug=True)
