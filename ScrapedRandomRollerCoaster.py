@@ -8,10 +8,6 @@ import pandas as pd
 from selenium import webdriver
 import chromedriver_autoinstaller
 
-#chromedriver_autoinstaller.install()
-
-driver = webdriver.Chrome()
-
 def scrape():
     executable_path = {'executable_path': ChromeDriverManager().install()}
     browser = Browser('chrome', **executable_path, headless=True)
