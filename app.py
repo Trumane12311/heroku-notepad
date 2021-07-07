@@ -32,15 +32,6 @@ def coasters_mongo():
             'Status': coaster['Status'],
             'Opened': coaster['Opened']
             })
-#        except KeyError:
-            #coaster_info = ({
-                #'_id': str(coaster['_id']),
-                #'Roller Coaster': coaster['Roller Coaster'],
-                #'Amusement Park': coaster['Amusement Park'],
-                #'Type': coaster['Type'],
-                #'Design': coaster['Design']
-                 #})
- #       if coaster['Status'] is not None:
         data.append(coaster_info)
     return jsonify(data)
 
@@ -65,6 +56,72 @@ def drops_mongo():
             })
         drop_data.append(coaster_info)
     return jsonify(drop_data)
+
+@app.route("/api/records/height")
+def heights_mongo():
+    heights = mongo.db.height_records.find({})
+    height_data = []
+
+    for height in heights:
+        coaster_info = ({
+            '_id': str(height['_id']),
+            'latitude': height['latitude'],
+            'longitude': height['longitude'],
+            'geometry': height['geometry'],
+            'City': height['City'],
+            'Rank': height['Rank'],
+            'Height': height['Height'],
+            'Roller Coaster': height['Roller Coaster'],
+            'Amusement Park': height['Amusement Park'],
+            'State': height['State'],
+            'Country': height['Country']
+            })
+        height_data.append(coaster_info)
+    return jsonify(height_data)
+
+@app.route("/api/records/length")
+def lengths_mongo():
+    lenghts = mongo.db.length_records.find({})
+    length_data = []
+
+    for length in lengths:
+        coaster_info = ({
+            '_id': str(length['_id']),
+            'latitude': length['latitude'],
+            'longitude': length['longitude'],
+            'geometry': length['geometry'],
+            'City': length['City'],
+            'Rank': length['Rank'],
+            'Length': length['Length'],
+            'Roller Coaster': length['Roller Coaster'],
+            'Amusement Park': length['Amusement Park'],
+            'State': length['State'],
+            'Country': length['Country']
+            })
+        length_data.append(coaster_info)
+    return jsonify(length_data)
+
+@app.route("/api/records/speed")
+def speeds_mongo():
+    speeds = mongo.db.speed_records.find({})
+    speed_data = []
+
+    for speed in speeds:
+        coaster_info = ({
+            '_id': str(speed['_id']),
+            'latitude': speed['latitude'],
+            'longitude': speed['longitude'],
+            'geometry': speed['geometry'],
+            'City': speed['City'],
+            'Rank': speed['Rank'],
+            'Speed': speed['Speed'],
+            'Roller Coaster': speed['Roller Coaster'],
+            'Amusement Park': speed['Amusement Park'],
+            'State': speed['State'],
+            'Country': speed['Country']
+            })
+        speed_data.append(coaster_info)
+    return jsonify(speed_data)
 
 if __name__ == "__main__":
     app.run(debug=True)
