@@ -11,10 +11,11 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def home():
-    random_coaster = mongo.db.random_coaster.find_one()
+    #random_coaster = mongo.db.random_coaster.find_one()
     #random_data = ScrapedRandomRollerCoaster.scrape()
     #mongo.db.random_coaster.update({}, random_data, upsert=True)
-    return render_template("index.html", random_coaster=random_coaster)
+    #return render_template("index.html", random_data=random_coaster)
+    return 'Welcome to my API'
 
 @app.route("/api/coasters/mongo")
 def coasters_mongo():
