@@ -20,45 +20,30 @@ def about():
     return render_template("about.html")
 
 @app.route("/heatmap.html")
-def visual1():
+def heatmap():
     return render_template("heatmap.html")
 
 @app.route("/international.html")
-def visual2():
+def international():
     return render_template("international.html")
 
-@app.route("/international.html")
-def visual3():
-    return render_template("international.html")
+@app.route("/chartist.html")
+def chartist():
+    return render_template("chartist.html")
 
-@app.route("/international.html")
-def visual3():
-    return render_template("international.html")
+@app.route("/multiplots.html")
+def multiplots():
+    return render_template("multiplots.html")
 
-@app.route("/international.html")
-def visual3():
-    return render_template("international.html")
-
-
-
+@app.route("/recordholders.html")
+def recordholders():
+    return render_template("recordholders.html")
 
 @app.route("/api/coasters/")
 def coasters_mongo():
-    coasters = mongo.db.coasters.find({})
-    data = []
-
-    for coaster in coasters:
-        coaster_info = ({
-            '_id': str(coaster['_id']),
-            'Roller Coaster': coaster['Roller Coaster'],
-            'Amusement Park': coaster['Amusement Park'],
-            'Type': coaster['Type'],
-            'Design': coaster['Design'],
-            'Status': coaster['Status'],
-            'Opened': coaster['Opened']
-            })
-        data.append(coaster_info)
-    return jsonify(data)
+    coasters = mongo.db.coasters_json.find_one({})
+    coasters['_id'] = str(coasters['_id'])
+    return jsonify(coasters)
 
 @app.route("/api/records/drop")
 def drops_mongo():
