@@ -150,7 +150,7 @@ def speeds_geo_mongo():
 
     return jsonify(speeds)
 
-@app.route("/api/records/worldview")
+@app.route("/api/worldview")
 def world_geo_mongo():
     world = mongo.db.worldview.find_one({})
     world['_id'] = str(world['_id'])
