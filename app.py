@@ -14,7 +14,33 @@ def home():
     random_data = ScrapedRandomRollerCoaster.scrape()
     mongo.db.random_coaster.update({}, random_data, upsert=True)
     return render_template("index.html", random_data=random_coaster)
-    #return 'Welcome to my API'
+
+@app.route("/about.html")
+def about():
+    return render_template("about.html")
+
+@app.route("/heatmap.html")
+def visual1():
+    return render_template("heatmap.html")
+
+@app.route("/international.html")
+def visual2():
+    return render_template("international.html")
+
+@app.route("/international.html")
+def visual3():
+    return render_template("international.html")
+
+@app.route("/international.html")
+def visual3():
+    return render_template("international.html")
+
+@app.route("/international.html")
+def visual3():
+    return render_template("international.html")
+
+
+
 
 @app.route("/api/coasters/")
 def coasters_mongo():
@@ -156,6 +182,13 @@ def world_geo_mongo():
     world['_id'] = str(world['_id'])
 
     return jsonify(world)
+
+@app.route("/api/coastersjson")
+def coasters_json_mongo():
+    coastj = mongo.db.coastersjson.find_one({})
+    coastj['_id'] = str(coastj['_id'])
+
+    return jsonify(coastj)
 
 if __name__ == "__main__":
     app.run(debug=True)
