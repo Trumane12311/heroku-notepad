@@ -15,6 +15,13 @@ def home():
     mongo.db.random_coaster.update({}, random_data, upsert=True)
     return render_template("index.html", random_data=random_coaster)
 
+@app.route("/index.html")
+def index():
+    random_coaster = mongo.db.random_coaster.find_one()
+    random_data = ScrapedRandomRollerCoaster.scrape()
+    mongo.db.random_coaster.update({}, random_data, upsert=True)
+    return render_template("index.html", random_data=random_coaster)
+
 @app.route("/about.html")
 def about():
     return render_template("about.html")
