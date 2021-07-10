@@ -74,5 +74,5 @@ $.getJSON(speed_url, function (geojson) {
         style: function (feature) {
         }
     }).addTo(myMap);
-    controlLayers.addOverlay(geojsonLayer, "Seped Record Holders");
+    controlLayers.addOverlay(geojsonLayer, "Speed Record Holders");
 });
