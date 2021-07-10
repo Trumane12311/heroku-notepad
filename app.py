@@ -46,6 +46,10 @@ def multiplots():
 def recordholders():
     return render_template("recordholders.html")
 
+@app.route("/API.html")
+def api():
+    return render_template("API.html")
+
 @app.route("/api/coasters/")
 def coasters_mongo():
     coasters = mongo.db.coasters_json.find_one({})
