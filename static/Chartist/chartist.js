@@ -1,5 +1,5 @@
 function init() {
-    d3.json("/api/coasters/").then((coasterData) => {
+    d3.json("https://how-we-roll.herokuapp.com/api/coasters/").then((coasterData) => {
         var suspendedCounter = 0;
         var sitdownCounter = 0;
         var invertedCounter = 0;
