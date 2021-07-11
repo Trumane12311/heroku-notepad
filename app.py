@@ -46,6 +46,10 @@ def multiplots():
 def recordholders():
     return render_template("recordholders.html")
 
+@app.route("/glossary.html")
+def glossary():
+    return render_template("glossary.html")
+
 @app.route("/API.html")
 def api():
     return render_template("API.html")
