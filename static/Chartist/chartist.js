@@ -103,7 +103,7 @@ function init() {
     },{
         title:"Bobsled(black): 0.3%, Stand Up(green): 0.2%, Pipeline(blue): 0.1%, Sit Down(purple): 95.2% "
     },{
-        title:"Be sure to check the glossary for any terminology you don't understand."
+        title:"Be sure to check the <a href="https://how-we-roll.herokuapp.com/glossary.html">glossary</a> for any terminology you don't understand."
     }]
 
     d3.select("thead")
