@@ -184,11 +184,25 @@ def world_geo_mongo():
     return jsonify(world)
 
 @app.route("/api/coasters_csv")
-def coasters_json_mongo():
-    coastj = mongo.db.coasters_json.find_one({})
-    coastj['_id'] = str(coastj['_id'])
+def coasters_csv():
+    coastercsv = mongo.db.coasters_csv.find_one({})
+    coastercsv['_id'] = str(coasters_csv['_id'])
+    csv_data = []
 
-    return jsonify(coastj)
+    for coast in coastercsv:
+        coaster_info = ({
+            '_id': str(coast['_id']),
+            'RollerCoaster': coast['RollerCoaster'],
+            'AmusementPark': coast['AmusementPark'],
+            'Type': coast['Type'],
+            'Design': coast['Design'],
+            'Status': coast['Status'],
+            'Opened': coast['Opened']
+            })
+        
+        csv_data.append(coaster_info)
+
+    return jsonify(csv_data)
 
 if __name__ == "__main__":
     app.run(debug=True)
