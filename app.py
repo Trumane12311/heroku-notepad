@@ -183,9 +183,9 @@ def world_geo_mongo():
 
     return jsonify(world)
 
-@app.route("/api/coastersjson")
+@app.route("/api/coasters_csv")
 def coasters_json_mongo():
-    coastj = mongo.db.coastersjson.find_one({})
+    coastj = mongo.db.coasters_json.find_one({})
     coastj['_id'] = str(coastj['_id'])
 
     return jsonify(coastj)

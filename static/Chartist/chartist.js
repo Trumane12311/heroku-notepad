@@ -1,5 +1,5 @@
 function init() {
-    d3.json("https://how-we-roll.herokuapp.com/api/coasters/").then((coasterData) => {
+    d3.json("../WebScraping/fulldatajsons/chartist.json").then((coasterData) => {
         var suspendedCounter = 0;
         var sitdownCounter = 0;
         var invertedCounter = 0;
@@ -126,7 +126,7 @@ function getData() {
   var dropdownMenu = d3.select("#selDataset");
   var dataset = dropdownMenu.property("value");
   var data = [];
-  d3.json("/api/coasters/").then((coasterData) => {
+  d3.json("../WebScraping/fulldatajsons/chartist.json").then((coasterData) => {
     console.log(dataset);
 
     if (dataset == 'designPiePlot') {
@@ -233,6 +233,10 @@ function getData() {
             },{
                 title:"Be sure to check the glossary for any terminology you don't understand."
             }]
+
+            d3.select("thead")
+            .selectAll("tr")
+            .remove()
         
             d3.select("thead")
             .selectAll("tr")

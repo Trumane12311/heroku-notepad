@@ -69,6 +69,25 @@
   background-color:rgba(255,255,212,0.66);
 }
 
+.jumbotron2 {
+  width: 100%;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 40px;
+  border-radius: 60px;
+  text-align: center;
+  align-items: center;
+  border: 8px double #78c2ad;
+  background-color:rgba(255,255,212,0.66);
+}
+
+.jumbotron2 p {
+  display: inline-block;
+  vertical-align: top;
+}
+
 #buttonRandomizer {
   align-items: center;
   text-align: center;
