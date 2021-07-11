@@ -1,5 +1,5 @@
 function init() {
-    d3.csv("../WebScraping/fulldatajsons/chartist.json").then((coasterData) => {
+    d3.json("http://how-we-roll.herokuapp.com/api/coasters/csv").then((coasterData) => {
         var suspendedCounter = 0;
         var sitdownCounter = 0;
         var invertedCounter = 0;
@@ -126,7 +126,7 @@ function getData() {
   var dropdownMenu = d3.select("#selDataset");
   var dataset = dropdownMenu.property("value");
   var data = [];
-  d3.csv("../WebScraping/fulldatajsons/chartist.json").then((coasterData) => {
+  d3.json("http://how-we-roll.herokuapp.com/api/coasters/csv").then((coasterData) => {
     console.log(dataset);
 
     if (dataset == 'designPiePlot') {
