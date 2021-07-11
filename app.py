@@ -186,7 +186,7 @@ def world_geo_mongo():
 @app.route("/api/coasters_csv")
 def coasters_csv():
     coastercsv = mongo.db.coasters_csv.find_one({})
-    coastercsv['_id'] = str(coasters_csv['_id'])
+    coastercsv['_id'] = str(coastercsv['_id'])
     csv_data = []
 
     for coast in coastercsv:
