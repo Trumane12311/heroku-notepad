@@ -183,10 +183,9 @@ def world_geo_mongo():
 
     return jsonify(world)
 
-@app.route("/api/coasters_csv")
+@app.route("/api/coasters/csv")
 def coasters_csv():
     coasters = mongo.db.coasters_csv.find({})
-    coasters['_id'] = str(coasters['_id'])
     coaster_data = []
 
     for coaster in coasters:
