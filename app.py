@@ -26,10 +26,6 @@ def index():
 def about():
     return render_template("about.html")
 
-@app.route("/heatmap.html")
-def heatmap():
-    return render_template("heatmap.html")
-
 @app.route("/international.html")
 def international():
     return render_template("international.html")

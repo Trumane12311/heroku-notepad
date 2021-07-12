@@ -48,7 +48,127 @@
         <br>
         <h1>This is How We Roll API</h1>
         <br>
-        <h2>API Routes</h2>
+        <h2>Routes</h2>
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    Coaster Data
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                  <div class="accordion-body">
+          <table class="table">
+            <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+              <th scope="col">Route</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Clean Coasters</td>
+              <td>Route will render a json of the clean roller coaster data, included completed fields for Roller Coaster Names, Amusement Park Name, Type, Design, Status, and Open Date.</td>
+              <td><a href="https://how-we-roll.herokuapp.com/api/coasters/">/api/coasters/</a></td>
+            </tr>
+            </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      </div>
+      <br>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collasped" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+              Record Holders
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+            <div class="accordion-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Route</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Drops</td>
+                    <td>Route will render a table-formatted json of the top 10 roller coasters by depth of drop, park name, location, and ranking.</td>
+                    <td><a href="https://how-we-roll.herokuapp.com/api/records/drop">/api/records/drop/</a></td>
+                  </tr>
+                  <tr>
+                    <td>Heights</td>
+                    <td>Route will render a table-formatted json of the top 10 roller coasters by maximum height, park name, location, and ranking.</td>
+                    <td><a href="https://how-we-roll.herokuapp.com/api/records/height">/api/records/height/</a></td>
+                  </tr>
+                  <tr>
+                    <td>Lengths</td>
+                    <td>Route will render a table-formatted json of the top 10 roller coasters by track length, park name, location, and ranking.</td>
+                    <td><a href="https://how-we-roll.herokuapp.com/api/records/length">/api/records/length/</a></td>
+                  </tr>
+                  <tr>
+                    <td>Speeds</td>
+                    <td>Route will render a table-formatted json of the top 10 roller coasters by top speed, park name, location, and ranking.</td>
+                    <td><a href="https://how-we-roll.herokuapp.com/api/records/speed">/api/records/speed/</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collasped" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+              GeoJSONs
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+            <div class="accordion-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Route</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Drops</td>
+                    <td>Route will render a geojson of the top 10 roller coasters by depth of drop, park name, location (latitude and longitude), geometry, and ranking.</td>
+                    <td><a href="https://how-we-roll.herokuapp.com/api/records/drop_geo">/api/records/drop_geo/</a></td>
+                  </tr>
+                  <tr>
+                    <td>Heights</td>
+                    <td>Route will render a geojson of the top 10 roller coasters by maximum height, park name, location (latitude and longitude), geometry, and ranking.</td>
+                    <td><a href="https://how-we-roll.herokuapp.com/api/records/height_geo">/api/records/height_geo/</a></td>
+                  </tr>
+                  <tr>
+                    <td>Lengths</td>
+                    <td>Route will render a geojson of the top 10 roller coasters by track length, park name, location (latitude and longitude), geometry, and ranking.</td>
+                    <td><a href="https://how-we-roll.herokuapp.com/api/records/length_geo">/api/records/length_geo/</a></td>
+                  </tr>
+                  <tr>
+                    <td>Speeds</td>
+                    <td>Route will render a geojson of the top 10 roller coasters by top speed, park name, location (latitude and longitude), geometry, and ranking.</td>
+                    <td><a href="https://how-we-roll.herokuapp.com/api/records/speed_geo">/api/records/speed_geo/</a></td>
+                  </tr>
+                  <tr>
+                    <td>Worldview</td>
+                    <td>Route will render a geojson of the count of roller coasters per country, country's geometry, country's population and area (per square mile).</td>
+                    <td><a href="https://how-we-roll.herokuapp.com/api/worldview">/api/worldview/</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
     </div>
 </body>
 
