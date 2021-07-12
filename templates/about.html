@@ -56,7 +56,7 @@
   <div class="container">
     <div class="row">
       <div class="col">
-      <div class="card border-primary text-center bg-primary" style="max-width: 25rem;">
+      <div class="card border-primary text-center bg-primary col-mb-4" style="max-width: 25rem;">
         <div class="card-header bg-primary text-white">
           <h3>Morgaine Bowers</h3></div>
         <img class="card-img-top" src="../static/images/MorgaineB.jpg">
@@ -78,7 +78,7 @@
       </div>
       </div>
       <div class="col">
-      <div class="card border-primary text-center bg-primary" style="max-width: 25rem;">
+      <div class="card border-primary text-center bg-primary col-mb-4" style="max-width: 25rem;">
         <div class="card-header text-white">
           <h3>Sydney Cavallaro</h3></div>
         <img class="card-img-top" src="../static/images/SydneyC.jpg">
@@ -89,11 +89,11 @@
       </div> 
     </div>
   </div>
-
+<br>
       <div class="container">
     <div class="row">
       <div class="col">
-      <div class="card border-primary text-center bg-primary" style="max-width: 25rem;">
+      <div class="card border-primary text-center bg-primary col-mb-4" style="max-width: 25rem;">
         <div class="card-header bg-primary text-white">
           <h3>Linda Penny</h3></div>
           <img class="card-img-top" src="../static/images/AnaLindaP.jpg">
@@ -114,32 +114,7 @@
         </div>
       </div>
       </div>
-      <div class="col" style="visibility:hidden">
-      <div class="card border-primary text-center bg-primary" style="max-width: 25rem;">
-        <div class="card-header text-white">
-          <h3>Sydney Cavallaro</h3></div>
-        <img class="card-img-top" src="../static/images/HarrisonK.jpg" style="image-rendering: 398px 398px;">
-        <div class="card-body">
-          <a class="nav-link text-center text-white" href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
-          <a class="nav-link text-center text-white" href="https://github.com/syd-cavs" target="_blank">GitHub</a>
-        </div>
-      </div> 
-    </div>
-  </div>
-  </div>
-    
-  </div>
-  <br>
-  <div class="accordion" id="accordionExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">Accordion Item #1</h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-        </div>
-      </div>
-    </div>
-  <div class="col-md-2 columns pl-0">
+  <div class="col-md">
     <div class="card bg-primary text-white">
         <div class="card-body">
             <h2 style="font-size:160%; font-weight: bold;">Languages & Libraries Utilized</h2>
@@ -177,29 +152,35 @@
                         <li>Bootstrap</li>
                     </ul>
                 </li>
-                <li>JSON
+                <li>JSON</li>
                   <ul style="line-height: 1.6; list-style-type:disc;">
                     <li>GeoJSON</li>
+                  </ul>
             </ul>
         </div>
     </div>
 </div>
-
-<div class="row pl-2">
-  <div class="col-md-8 columns">
+    </div>
+      </div>
+  </div>
+  <br>
+  <div class="container">
+  <div class="row">
+  </div>
+  <div class="col-md-12">
       <div class="card bg-primary text-white">
           <div class="card-body">
               <h2 style="font-size:145%; font-weight: bold;">Brief Project Summary & ETL</h2>
               <hr class="lighthr">
-              <h3 style="font-size:120%; font-weight: bold;">Finding Inspiration</h3>
+              <h4 style="font-size:120%; font-weight: bold;">Finding Inspiration</h3>
               <p style="font-size:110%; line-height: 1.6;">Collectively as a team we elected to choose a topic that was fun, interesting and exciting to explore in more detail. 
                 We have enjoyed analyzing these types of data resources. Our ride during this project has had some ups, downs, bumps and head shaking experiences but overall the challenges that we encountered, have definitely strenghtened our ability to get to the finish line which is being demonstrated on the Heroku deployment link shown below.
               </p>              
-              <h3 style="font-size:120%; font-weight: bold;">Data Review & Analysis</h3>
-              <p style="font-size:110%; line-height: 1.6;">We reviewed the various datasets from the <a href="https://rcdb.com/">RCDB</a> website which included data regarding Domestic & International Roller Coasters, Cencus Reports, Record Holders, etc. 
+              <h4 style="font-size:120%; font-weight: bold;">Data Review & Analysis</h3>
+              <p style="font-size:110%; line-height: 1.6;">We reviewed the various datasets from the <strong>RCDB (Roller Coaster Database)</strong> website which included data regarding Domestic & International Roller Coasters, Cencus Reports, Record Holders, etc. 
                 We realized that the data volume was quite high so we decided to write various scripts to web scrape the data.
               </p>
-              <h3 style="font-size:120%; font-weight: bold;">Extract, Load & Transform</h3>
+              <h4 style="font-size:120%; font-weight: bold;">Extract, Load & Transform</h3>
               <ul style="font-size:110%; line-height: 1.6; list-style-type: circle;">
                   <li>
                       Developed various scripts to web scrape only the relevant data from the different sections of the website.
@@ -216,16 +197,13 @@
               </ul>
               <h3 style="font-size:120%; font-weight: bold;">Deployment</h3>
               <ul style="font-size:110%; line-height: 1.6; list-style-type: circle;">
-                  <li>
-                      Roll down to check out our fully functional Heroku <a href="https://how-we-roll.herokuapp.com/">link</a>.
+                  <li>Via Heroku Cloud Application Platform.
                   </li>
               </ul>
           </div>
       </div>
   </div>
-
   </div>
-  <br>
 
 </body>
 

@@ -267,6 +267,11 @@ a {
   text-decoration: underline;
 }
 
+a b {
+  color:white;
+  text-decoration: underline;
+}
+
 a:hover {
   color: #609b8a;
 }
@@ -275,6 +280,7 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   color: inherit;
   text-decoration: none;
 }
+
 
 pre,
 code,
